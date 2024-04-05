@@ -1,0 +1,254 @@
+/* BASE */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+
+  background-color: #fcfcfd;
+}
+
+/* FONTS */
+h1,
+h2 {
+  font-weight: 600;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* CONTENT */
+main {
+  display: flex;
+  /* align-items: center; */
+  /* flex-direction: row; */
+
+  gap: 50px;
+}
+
+section {
+  position: relative;
+  padding: 30px;
+
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #e4eaf1;
+}
+
+section p {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #899cb3;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  animation: slideInFromLeft 1s forwards;
+}
+
+/* Slide in from left animation for card */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.card div {
+  margin-bottom: 30px;
+}
+
+.card ul {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+
+  margin-bottom: 0;
+}
+
+.card ul li {
+  display: flex;
+  align-items: center;
+
+  padding: 4px 8px 4px 8px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 500;
+
+  border-radius: 12px;
+  background-color: #c3d0e0;
+}
+
+.card ul li.grass {
+  background-color: #5dbd63;
+}
+
+.card ul li.poison {
+  background-color: #aa6bc8;
+}
+
+.pokeball {
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+
+  width: 70%;
+}
+
+.pokemon {
+  height: 80px;
+  width: auto;
+  z-index: 1;
+}
+/* .pokemon {
+  height: 40%;
+  width: auto;
+  z-index: 1;
+} */
+
+.icon {
+  width: 10px;
+  height: auto;
+  margin-right: 4px;
+}
+
+.stats {
+  border: 3px solid #e4eaf1;
+  background-color: transparent;
+
+  animation: slideInFromRight 1s forwards;
+}
+
+/* Slide in from right animation for stats */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.stats h2 {
+  margin-bottom: 18px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bar {
+  display: block;
+
+  width: 230px;
+  height: 8px;
+
+  margin-top: 6px;
+
+  border-radius: 12px;
+  background-color: #d7e0ea;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  border-radius: 12px;
+}
+
+#health p {
+  color: #3cc952;
+}
+
+#health .bar span {
+  width: 70%;
+  background-color: #3cc952;
+}
+
+#attack p {
+  color: #e31e1e;
+}
+
+#attack .bar span {
+  width: 80%;
+  background-color: #e31e1e;
+}
+
+#defense p {
+  color: #107ee4;
+}
+
+#defense .bar span {
+  width: 60%;
+  background-color: #107ee4;
+}
+
+.stars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Fade in animation for stars */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.star {
+  width: 28px;
+  height: 28px;
+
+  animation: rotate 2s linear infinite; /* Specifies the animation */
+}
+
+.star img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
